@@ -177,7 +177,8 @@ var _default =
       cateList: [],
       active: 0,
       // 二级分类的列表
-      cateLevel2: [] };
+      cateLevel2: [],
+      scrollTop: 0 };
 
   },
   onLoad: function onLoad() {
@@ -203,6 +204,7 @@ var _default =
 
       // 重新为二级分类赋值
       this.cateLevel2 = this.cateList[i].children;
+      this.scrollTop = this.scrollTop === 0 ? 1 : 0;
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

@@ -11,7 +11,7 @@
         </block>
       </scroll-view>
       <!-- 右侧滑动区域 -->
-      <scroll-view scroll-y="true" :style="{height: wh + 'px'}" class="right-scroll-view">
+      <scroll-view scroll-y="true" :style="{height: wh + 'px'}" class="right-scroll-view" :scroll-top="scrollTop">
         <view class="cate-lv2" v-for="(item2, i2) in cateLevel2"
         :key="i2">
         <!-- 二级分类的标题 -->
@@ -43,7 +43,8 @@
         cateList: [],
         active: 0,
         // 二级分类的列表
-        cateLevel2: []
+        cateLevel2: [],
+        scrollTop: 0
       };
     },
     onLoad() {
@@ -69,6 +70,7 @@
         
         // 重新为二级分类赋值
         this.cateLevel2 = this.cateList[i].children
+        this.scrollTop = this.scrollTop === 0 ? 1 : 0
       }
     }
   }
