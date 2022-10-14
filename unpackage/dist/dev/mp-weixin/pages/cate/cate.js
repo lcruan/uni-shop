@@ -201,10 +201,15 @@ var _default =
     },
     activeChanged: function activeChanged(i) {
       this.active = i;
-
       // 重新为二级分类赋值
       this.cateLevel2 = this.cateList[i].children;
       this.scrollTop = this.scrollTop === 0 ? 1 : 0;
+    },
+    // 跳转到商品列表页面
+    gotoGoodsList: function gotoGoodsList(item) {
+      uni.navigateTo({
+        url: '/subpkg/goods_list/goods_list?cid=' + item.cat_id });
+
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

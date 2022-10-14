@@ -20,7 +20,7 @@
           <view class="cate-lv3-list">
             <!-- 三级分类的item项 -->
             <view class="cate-lv3-item" v-for="(item3, i3) in item2.children"
-            :key="i3">
+            :key="i3" @click="gotoGoodsList(item3)">
               <!-- 三级分类的图片 -->
               <image :src="item3.cat_icon"></image>
               <!-- 三级分类的文本 -->
@@ -67,10 +67,15 @@
       },
       activeChanged(i) {
         this.active = i
-        
         // 重新为二级分类赋值
         this.cateLevel2 = this.cateList[i].children
         this.scrollTop = this.scrollTop === 0 ? 1 : 0
+      },
+      // 跳转到商品列表页面
+      gotoGoodsList(item) {
+        uni.navigateTo({
+          url: '/subpkg/goods_list/goods_list?cid='+ item.cat_id
+        })
       }
     }
   }
