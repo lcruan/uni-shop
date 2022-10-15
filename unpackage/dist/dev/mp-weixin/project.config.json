@@ -22,7 +22,24 @@
     "libVersion": "2.26.1",
     "appid": "wxf0ef8ae44c313e61",
     "projectname": "uni-shop8",
-    "condition": {},
+    "condition": {
+        "search": {
+            "current": -1,
+            "list": []
+        },
+        "conversation": {
+            "current": -1,
+            "list": []
+        },
+        "game": {
+            "current": -1,
+            "list": []
+        },
+        "miniprogram": {
+            "current": -1,
+            "list": []
+        }
+    },
     "editorSetting": {
         "tabIndent": "insertSpaces",
         "tabSize": 4
