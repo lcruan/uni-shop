@@ -9,7 +9,7 @@
     </view>
     
     <!-- 搜索建议列表 -->
-    <view class="sugg-list">
+    <view class="sugg-list" v-if="searchResults.length !== 0">
       <view class="sugg-item" v-for="(item, i) in searchResults" 
         :key="i"
         @click="gotoDetail(item)">
@@ -19,16 +19,18 @@
     </view>
     
     <!-- 搜索历史 -->
-    <view class="history-box">
+    <view class="history-box" v-else>
       <!-- 标题区域 -->
       <view class="history-title">
         <text>搜索历史</text>
-        <uni-icons type="trash" size="17"></uni-icons>
+        <uni-icons type="trash" size="17" @click="clean"></uni-icons>
       </view>
       <!-- 列表区域 -->
       <view class="history-list">
-        <uni-tag :text="item" v-for="(item, i) in historyList"
-          :key="i"></uni-tag>
+        <uni-tag 
+          :text="item" v-for="(item, i) in histories"
+          :key="i"
+          @click="gotoGoodsList(item)"></uni-tag>
       </view>
     </view>
   </view>
@@ -43,8 +45,11 @@
         // 搜索的结果列表
         searchResults: [],
         // 搜索历史的数组
-        historyList: ['a', 'app', 'apple']
+        historyList: []
       };
+    },
+    onLoad() {
+      this.historyList = JSON.parse(uni.getStorageSync('kw') || '[]')
     },
     methods: {
       // input输入事件的处理函数
@@ -66,11 +71,38 @@
         })
         if(data.meta.status !== 200) return uni.$showMsg()
         this.searchResults = data.message
+        
+        this.saveSearchHistory()
       },
       gotoDetail(item) {
         uni.navigateTo({
           url: '/subpkg/goods_detail/goods_detail?goods_id=' + item.goods_id
         })
+      },
+      saveSearchHistory() {
+        // this.historyList.push(this.kw)
+        
+        const set = new Set(this.historyList)
+        set.delete(this.kw)
+        set.add(this.kw)
+        this.historyList = Array.from(set)
+        
+        // 对搜索历史数据进行持久化存储
+        uni.setStorageSync('kw', JSON.stringify(this.historyList))
+      },
+      clean() {
+        this.historyList = []
+        uni.setStorageSync('kw', '[]')
+      },
+      gotoGoodsList(kw) {
+        uni.navigateTo({
+          url: '/subpkg/goods_list/goods_list?query=' + kw
+        })
+      }
+    },
+    computed: {
+      histories() {
+        return [...this.historyList].reverse()
       }
     }
   }
