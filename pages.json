@@ -1,27 +1,21 @@
 {
   "pages": [{
-    "path": "pages/home/home",
-    "style": {
-      "navigationBarTitleText": "黑马优购"
-    }
+    "path": "pages/home/home"
   }, {
     "path": "pages/cate/cate",
     "style": {
-      "navigationBarTitleText": "",
       "enablePullDownRefresh": false
     }
 
   }, {
     "path": "pages/cart/cart",
     "style": {
-      "navigationBarTitleText": "",
       "enablePullDownRefresh": false
     }
 
   }, {
     "path": "pages/my/my",
     "style": {
-      "navigationBarTitleText": "",
       "enablePullDownRefresh": false
     }
 
@@ -33,14 +27,12 @@
       {
         "path": "goods_detail/goods_detail",
         "style": {
-          "navigationBarTitleText": "",
           "enablePullDownRefresh": false
         }
 
       }, {
         "path": "goods_list/goods_list",
         "style": {
-          "navigationBarTitleText": "",
           "enablePullDownRefresh": false,
           "onReachBottomDistance": 150,
           "enablePullDownRefresh": true,
@@ -52,7 +44,6 @@
                     "path" : "search/search",
                     "style" :                                                                                    
                 {
-                    "navigationBarTitleText": "",
                     "enablePullDownRefresh": false
                 }
                 
@@ -61,7 +52,7 @@
   }],
   "globalStyle": {
     "navigationBarTextStyle": "white",
-    "navigationBarTitleText": "uni-app",
+    "navigationBarTitleText": "黑马优购",
     "navigationBarBackgroundColor": "#C00000",
     "backgroundColor": "#F8F8F8",
     "app-plus": {
