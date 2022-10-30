@@ -21,6 +21,30 @@ export default {
     },
     saveToStorage(state) {
       uni.setStorageSync('cart', JSON.stringify(state.cart))
+    },
+    // 更新购物车中商品的勾选状态
+    updateGoodsState(state, goods) {
+      const findResult = state.cart.find(x => x.goods_id === goods.goods_id)
+      if(findResult) {
+        findResult.goods_state = goods.goods_state
+        
+        this.commit('m_cart/saveToStorage')
+      }
+    },
+    // 更新商品的数量
+    updateGoodsCount(state, goods) {
+      const findResult = state.cart.find(x => x.goods_id === goods.goods_id)
+      if(findResult) {
+        findResult.goods_count = goods.goods_count
+        this.commit('m_cart/saveToStorage')
+      }
+    },
+    // 根据id删除对应的商品
+    removeGoodsById(state, goods_id) {
+      // 过滤掉你删除的那个
+      state.cart = state.cart.filter(x => x.goods_id !== goods_id)
+      
+      this.commit('m_cart/saveToStorage')
     }
   },
   getters: {
