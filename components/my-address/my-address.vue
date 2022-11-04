@@ -1,21 +1,23 @@
 <template>
   <view>
     <!-- 选择收货地址的盒子 -->
-    <view class="address-choose-box">
-      <button type="primary" size="mini" class="btnChooseAddress">请选择收货地址+</button>
+    <view class="address-choose-box" v-if="JSON.stringify(address) === '{}'">
+      <button type="primary" size="mini" 
+        class="btnChooseAddress"
+        @click="chooseAddress">请选择收货地址+</button>
     </view>
     
     <!-- 渲染收货信息的盒子 -->
-    <view class="address-info-box">
+    <view class="address-info-box" v-else>
       <view class="row1">
         <view class="row1-left">
           <view class="username">
-            收货人：ask
+            收货人：{{address.userName}}
           </view>
         </view>
         <view class="row1-right">
           <view class="phone">
-            电话：13812341234
+            电话：{{address.telNumber}}
           </view>
           <uni-icons type="arrowright" size="16"></uni-icons>
         </view>
@@ -25,7 +27,7 @@
           收货地址：
         </view>
         <view class="row2-right">
-          河北省邯郸市肥乡区XXX河北省邯郸市肥乡区XXXXXX河北省邯郸市肥乡区XXX
+          {{addstr}}
         </view>
       </view>
     </view>
@@ -36,12 +38,32 @@
 </template>
 
 <script>
+  import { mapState, mapMutations } from 'vuex'
   export default {
     name:"my-address",
     data() {
       return {
-        
+        // address: {}
       };
+    },
+    methods: {
+      ...mapMutations('m_user',['updateAddress']),
+      async chooseAddress() {
+        const [err, succ] = await uni.chooseAddress().catch(err => err)
+        if(err === null && succ.errMsg === 'chooseAddress:ok') {
+          console.log(succ);
+          // this.address = succ
+          // 将用户选择的收货地址 存储到vuex中
+          this.updateAddress(succ)
+        }
+      }
+    },
+    computed: {
+      ...mapState('m_user', ['address']),
+      addstr() {
+        if(!this.address.provinceName) return ''
+        return this.address.provinceName + this.address.cityName + this.address.countyName + this.address.detailInfo
+      }
     }
   }
 </script>
@@ -77,7 +99,6 @@
   }
   .row2 {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     margin-top: 10px;
     .row2-left {

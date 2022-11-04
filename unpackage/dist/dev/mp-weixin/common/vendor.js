@@ -2538,36 +2538,680 @@ uni$1;exports.default = _default;
 
 /***/ }),
 
-/***/ 100:
-/*!**********************************************************************************************************************************!*\
-  !*** /Users/ruanlucheng/learn/web/study-web/case/heima/uni-shop/uni_modules/uni-goods-nav/components/uni-goods-nav/i18n/en.json ***!
-  \**********************************************************************************************************************************/
-/*! exports provided: uni-goods-nav.options.shop, uni-goods-nav.options.cart, uni-goods-nav.buttonGroup.addToCart, uni-goods-nav.buttonGroup.buyNow, default */
-/***/ (function(module) {
+/***/ 104:
+/*!*****************************************************************************************************************************************!*\
+  !*** /Users/ruanlucheng/learn/web/study-web/case/heima/uni-shop/uni_modules/uni-swipe-action/components/uni-swipe-action-item/mpwxs.js ***!
+  \*****************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = JSON.parse("{\"uni-goods-nav.options.shop\":\"shop\",\"uni-goods-nav.options.cart\":\"cart\",\"uni-goods-nav.buttonGroup.addToCart\":\"add to cart\",\"uni-goods-nav.buttonGroup.buyNow\":\"buy now\"}");
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var mpMixins = {};
+var is_pc = null;
+
+
+
+
+
+
+
+
+mpMixins = {
+  data: function data() {
+    return {
+      is_show: 'none' };
+
+  },
+  watch: {
+    show: function show(newVal) {
+      this.is_show = this.show;
+    } },
+
+  created: function created() {
+    this.swipeaction = this.getSwipeAction();
+    if (this.swipeaction.children !== undefined) {
+      this.swipeaction.children.push(this);
+    }
+  },
+  mounted: function mounted() {
+    this.is_show = this.show;
+  },
+  methods: {
+    // wxs 中调用
+    closeSwipe: function closeSwipe(e) {
+      if (!this.autoClose) return;
+      this.swipeaction.closeOther(this);
+    },
+
+    change: function change(e) {
+      this.$emit('change', e.open);
+      if (this.is_show !== e.open) {
+        this.is_show = e.open;
+      }
+    },
+
+    appTouchStart: function appTouchStart(e) {
+      if (is_pc) return;var
+
+      clientX =
+      e.changedTouches[0].clientX;
+      this.clientX = clientX;
+      this.timestamp = new Date().getTime();
+    },
+    appTouchEnd: function appTouchEnd(e, index, item, position) {
+      if (is_pc) return;var
+
+      clientX =
+      e.changedTouches[0].clientX;
+      // fixed by xxxx 模拟点击事件，解决 ios 13 点击区域错位的问题
+      var diff = Math.abs(this.clientX - clientX);
+      var time = new Date().getTime() - this.timestamp;
+      if (diff < 40 && time < 300) {
+        this.$emit('click', {
+          content: item,
+          index: index,
+          position: position });
+
+      }
+    },
+    onClickForPC: function onClickForPC(index, item, position) {
+      if (!is_pc) return;
+
+
+
+
+
+
+
+    } } };var _default =
+
+
+
+
+mpMixins;exports.default = _default;
 
 /***/ }),
 
-/***/ 101:
-/*!***************************************************************************************************************************************!*\
-  !*** /Users/ruanlucheng/learn/web/study-web/case/heima/uni-shop/uni_modules/uni-goods-nav/components/uni-goods-nav/i18n/zh-Hans.json ***!
-  \***************************************************************************************************************************************/
-/*! exports provided: uni-goods-nav.options.shop, uni-goods-nav.options.cart, uni-goods-nav.buttonGroup.addToCart, uni-goods-nav.buttonGroup.buyNow, default */
-/***/ (function(module) {
+/***/ 105:
+/*!********************************************************************************************************************************************!*\
+  !*** /Users/ruanlucheng/learn/web/study-web/case/heima/uni-shop/uni_modules/uni-swipe-action/components/uni-swipe-action-item/bindingx.js ***!
+  \********************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = JSON.parse("{\"uni-goods-nav.options.shop\":\"店铺\",\"uni-goods-nav.options.cart\":\"购物车\",\"uni-goods-nav.buttonGroup.addToCart\":\"加入购物车\",\"uni-goods-nav.buttonGroup.buyNow\":\"立即购买\"}");
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var bindIngXMixins = {};var _default =
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+bindIngXMixins;exports.default = _default;
 
 /***/ }),
 
-/***/ 102:
-/*!***************************************************************************************************************************************!*\
-  !*** /Users/ruanlucheng/learn/web/study-web/case/heima/uni-shop/uni_modules/uni-goods-nav/components/uni-goods-nav/i18n/zh-Hant.json ***!
-  \***************************************************************************************************************************************/
-/*! exports provided: uni-goods-nav.options.shop, uni-goods-nav.options.cart, uni-goods-nav.buttonGroup.addToCart, uni-goods-nav.buttonGroup.buyNow, default */
-/***/ (function(module) {
+/***/ 106:
+/*!*******************************************************************************************************************************************!*\
+  !*** /Users/ruanlucheng/learn/web/study-web/case/heima/uni-shop/uni_modules/uni-swipe-action/components/uni-swipe-action-item/mpother.js ***!
+  \*******************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = JSON.parse("{\"uni-goods-nav.options.shop\":\"店鋪\",\"uni-goods-nav.options.cart\":\"購物車\",\"uni-goods-nav.buttonGroup.addToCart\":\"加入購物車\",\"uni-goods-nav.buttonGroup.buyNow\":\"立即購買\"}");
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var otherMixins = {};var _default =
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+otherMixins;exports.default = _default;
 
 /***/ }),
 
@@ -2700,57 +3344,6 @@ function normalizeComponent (
 
 /***/ }),
 
-/***/ 110:
-/*!*************************************************************************************************************************************!*\
-  !*** /Users/ruanlucheng/learn/web/study-web/case/heima/uni-shop/uni_modules/uni-search-bar/components/uni-search-bar/i18n/index.js ***!
-  \*************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 111));
-var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 112));
-var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 113));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
-{
-  en: _en.default,
-  'zh-Hans': _zhHans.default,
-  'zh-Hant': _zhHant.default };exports.default = _default;
-
-/***/ }),
-
-/***/ 111:
-/*!************************************************************************************************************************************!*\
-  !*** /Users/ruanlucheng/learn/web/study-web/case/heima/uni-shop/uni_modules/uni-search-bar/components/uni-search-bar/i18n/en.json ***!
-  \************************************************************************************************************************************/
-/*! exports provided: uni-search-bar.cancel, uni-search-bar.placeholder, default */
-/***/ (function(module) {
-
-module.exports = JSON.parse("{\"uni-search-bar.cancel\":\"cancel\",\"uni-search-bar.placeholder\":\"Search enter content\"}");
-
-/***/ }),
-
-/***/ 112:
-/*!*****************************************************************************************************************************************!*\
-  !*** /Users/ruanlucheng/learn/web/study-web/case/heima/uni-shop/uni_modules/uni-search-bar/components/uni-search-bar/i18n/zh-Hans.json ***!
-  \*****************************************************************************************************************************************/
-/*! exports provided: uni-search-bar.cancel, uni-search-bar.placeholder, default */
-/***/ (function(module) {
-
-module.exports = JSON.parse("{\"uni-search-bar.cancel\":\"cancel\",\"uni-search-bar.placeholder\":\"请输入搜索内容\"}");
-
-/***/ }),
-
-/***/ 113:
-/*!*****************************************************************************************************************************************!*\
-  !*** /Users/ruanlucheng/learn/web/study-web/case/heima/uni-shop/uni_modules/uni-search-bar/components/uni-search-bar/i18n/zh-Hant.json ***!
-  \*****************************************************************************************************************************************/
-/*! exports provided: uni-search-bar.cancel, uni-search-bar.placeholder, default */
-/***/ (function(module) {
-
-module.exports = JSON.parse("{\"uni-search-bar.cancel\":\"cancel\",\"uni-search-bar.placeholder\":\"請輸入搜索內容\"}");
-
-/***/ }),
-
 /***/ 12:
 /*!*********************************************************************************!*\
   !*** /Users/ruanlucheng/learn/web/study-web/case/heima/uni-shop/store/store.js ***!
@@ -2761,17 +3354,70 @@ module.exports = JSON.parse("{\"uni-search-bar.cancel\":\"cancel\",\"uni-search-
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 4));
 var _vuex = _interopRequireDefault(__webpack_require__(/*! vuex */ 13));
-var _cart = _interopRequireDefault(__webpack_require__(/*! @/store/cart.js */ 14));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _cart = _interopRequireDefault(__webpack_require__(/*! @/store/cart.js */ 14));
+var _user = _interopRequireDefault(__webpack_require__(/*! @/store/user.js */ 169));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
 _vue.default.use(_vuex.default);
 
 var store = new _vuex.default.Store({
   modules: {
-    'm_cart': _cart.default } });var _default =
+    'm_cart': _cart.default,
+    'm_user': _user.default } });var _default =
 
 
 
 store;exports.default = _default;
+
+/***/ }),
+
+/***/ 123:
+/*!***********************************************************************************************************************************!*\
+  !*** /Users/ruanlucheng/learn/web/study-web/case/heima/uni-shop/uni_modules/uni-goods-nav/components/uni-goods-nav/i18n/index.js ***!
+  \***********************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 124));
+var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 125));
+var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 126));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
+{
+  en: _en.default,
+  'zh-Hans': _zhHans.default,
+  'zh-Hant': _zhHant.default };exports.default = _default;
+
+/***/ }),
+
+/***/ 124:
+/*!**********************************************************************************************************************************!*\
+  !*** /Users/ruanlucheng/learn/web/study-web/case/heima/uni-shop/uni_modules/uni-goods-nav/components/uni-goods-nav/i18n/en.json ***!
+  \**********************************************************************************************************************************/
+/*! exports provided: uni-goods-nav.options.shop, uni-goods-nav.options.cart, uni-goods-nav.buttonGroup.addToCart, uni-goods-nav.buttonGroup.buyNow, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("{\"uni-goods-nav.options.shop\":\"shop\",\"uni-goods-nav.options.cart\":\"cart\",\"uni-goods-nav.buttonGroup.addToCart\":\"add to cart\",\"uni-goods-nav.buttonGroup.buyNow\":\"buy now\"}");
+
+/***/ }),
+
+/***/ 125:
+/*!***************************************************************************************************************************************!*\
+  !*** /Users/ruanlucheng/learn/web/study-web/case/heima/uni-shop/uni_modules/uni-goods-nav/components/uni-goods-nav/i18n/zh-Hans.json ***!
+  \***************************************************************************************************************************************/
+/*! exports provided: uni-goods-nav.options.shop, uni-goods-nav.options.cart, uni-goods-nav.buttonGroup.addToCart, uni-goods-nav.buttonGroup.buyNow, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("{\"uni-goods-nav.options.shop\":\"店铺\",\"uni-goods-nav.options.cart\":\"购物车\",\"uni-goods-nav.buttonGroup.addToCart\":\"加入购物车\",\"uni-goods-nav.buttonGroup.buyNow\":\"立即购买\"}");
+
+/***/ }),
+
+/***/ 126:
+/*!***************************************************************************************************************************************!*\
+  !*** /Users/ruanlucheng/learn/web/study-web/case/heima/uni-shop/uni_modules/uni-goods-nav/components/uni-goods-nav/i18n/zh-Hant.json ***!
+  \***************************************************************************************************************************************/
+/*! exports provided: uni-goods-nav.options.shop, uni-goods-nav.options.cart, uni-goods-nav.buttonGroup.addToCart, uni-goods-nav.buttonGroup.buyNow, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("{\"uni-goods-nav.options.shop\":\"店鋪\",\"uni-goods-nav.options.cart\":\"購物車\",\"uni-goods-nav.buttonGroup.addToCart\":\"加入購物車\",\"uni-goods-nav.buttonGroup.buyNow\":\"立即購買\"}");
 
 /***/ }),
 
@@ -4032,6 +4678,57 @@ module.exports = index_cjs;
 
 /***/ }),
 
+/***/ 134:
+/*!*************************************************************************************************************************************!*\
+  !*** /Users/ruanlucheng/learn/web/study-web/case/heima/uni-shop/uni_modules/uni-search-bar/components/uni-search-bar/i18n/index.js ***!
+  \*************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 135));
+var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 136));
+var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 137));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
+{
+  en: _en.default,
+  'zh-Hans': _zhHans.default,
+  'zh-Hant': _zhHant.default };exports.default = _default;
+
+/***/ }),
+
+/***/ 135:
+/*!************************************************************************************************************************************!*\
+  !*** /Users/ruanlucheng/learn/web/study-web/case/heima/uni-shop/uni_modules/uni-search-bar/components/uni-search-bar/i18n/en.json ***!
+  \************************************************************************************************************************************/
+/*! exports provided: uni-search-bar.cancel, uni-search-bar.placeholder, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("{\"uni-search-bar.cancel\":\"cancel\",\"uni-search-bar.placeholder\":\"Search enter content\"}");
+
+/***/ }),
+
+/***/ 136:
+/*!*****************************************************************************************************************************************!*\
+  !*** /Users/ruanlucheng/learn/web/study-web/case/heima/uni-shop/uni_modules/uni-search-bar/components/uni-search-bar/i18n/zh-Hans.json ***!
+  \*****************************************************************************************************************************************/
+/*! exports provided: uni-search-bar.cancel, uni-search-bar.placeholder, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("{\"uni-search-bar.cancel\":\"cancel\",\"uni-search-bar.placeholder\":\"请输入搜索内容\"}");
+
+/***/ }),
+
+/***/ 137:
+/*!*****************************************************************************************************************************************!*\
+  !*** /Users/ruanlucheng/learn/web/study-web/case/heima/uni-shop/uni_modules/uni-search-bar/components/uni-search-bar/i18n/zh-Hant.json ***!
+  \*****************************************************************************************************************************************/
+/*! exports provided: uni-search-bar.cancel, uni-search-bar.placeholder, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("{\"uni-search-bar.cancel\":\"cancel\",\"uni-search-bar.placeholder\":\"請輸入搜索內容\"}");
+
+/***/ }),
+
 /***/ 14:
 /*!********************************************************************************!*\
   !*** /Users/ruanlucheng/learn/web/study-web/case/heima/uni-shop/store/cart.js ***!
@@ -4184,680 +4881,33 @@ var $http = new Request();exports.$http = $http;
 
 /***/ }),
 
-/***/ 153:
-/*!*****************************************************************************************************************************************!*\
-  !*** /Users/ruanlucheng/learn/web/study-web/case/heima/uni-shop/uni_modules/uni-swipe-action/components/uni-swipe-action-item/mpwxs.js ***!
-  \*****************************************************************************************************************************************/
+/***/ 169:
+/*!********************************************************************************!*\
+  !*** /Users/ruanlucheng/learn/web/study-web/case/heima/uni-shop/store/user.js ***!
+  \********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var mpMixins = {};
-var is_pc = null;
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  // 开启命名空间
+  namespaced: true,
+
+  // 数据
+  state: function state() {return {
+      address: {} };},
 
 
-
-
-
-
-
-
-mpMixins = {
-  data: function data() {
-    return {
-      is_show: 'none' };
-
-  },
-  watch: {
-    show: function show(newVal) {
-      this.is_show = this.show;
+  // 方法
+  mutations: {
+    // 更新收货地址
+    updateAddress: function updateAddress(state, address) {
+      state.address = address;
     } },
 
-  created: function created() {
-    this.swipeaction = this.getSwipeAction();
-    if (this.swipeaction.children !== undefined) {
-      this.swipeaction.children.push(this);
-    }
-  },
-  mounted: function mounted() {
-    this.is_show = this.show;
-  },
-  methods: {
-    // wxs 中调用
-    closeSwipe: function closeSwipe(e) {
-      if (!this.autoClose) return;
-      this.swipeaction.closeOther(this);
-    },
 
-    change: function change(e) {
-      this.$emit('change', e.open);
-      if (this.is_show !== e.open) {
-        this.is_show = e.open;
-      }
-    },
 
-    appTouchStart: function appTouchStart(e) {
-      if (is_pc) return;var
-
-      clientX =
-      e.changedTouches[0].clientX;
-      this.clientX = clientX;
-      this.timestamp = new Date().getTime();
-    },
-    appTouchEnd: function appTouchEnd(e, index, item, position) {
-      if (is_pc) return;var
-
-      clientX =
-      e.changedTouches[0].clientX;
-      // fixed by xxxx 模拟点击事件，解决 ios 13 点击区域错位的问题
-      var diff = Math.abs(this.clientX - clientX);
-      var time = new Date().getTime() - this.timestamp;
-      if (diff < 40 && time < 300) {
-        this.$emit('click', {
-          content: item,
-          index: index,
-          position: position });
-
-      }
-    },
-    onClickForPC: function onClickForPC(index, item, position) {
-      if (!is_pc) return;
-
-
-
-
-
-
-
-    } } };var _default =
-
-
-
-
-mpMixins;exports.default = _default;
-
-/***/ }),
-
-/***/ 154:
-/*!********************************************************************************************************************************************!*\
-  !*** /Users/ruanlucheng/learn/web/study-web/case/heima/uni-shop/uni_modules/uni-swipe-action/components/uni-swipe-action-item/bindingx.js ***!
-  \********************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var bindIngXMixins = {};var _default =
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-bindIngXMixins;exports.default = _default;
-
-/***/ }),
-
-/***/ 155:
-/*!*******************************************************************************************************************************************!*\
-  !*** /Users/ruanlucheng/learn/web/study-web/case/heima/uni-shop/uni_modules/uni-swipe-action/components/uni-swipe-action-item/mpother.js ***!
-  \*******************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var otherMixins = {};var _default =
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-otherMixins;exports.default = _default;
+  getters: {} };exports.default = _default;
 
 /***/ }),
 
@@ -12240,7 +12290,7 @@ internalMixin(Vue);
 
 /***/ }),
 
-/***/ 84:
+/***/ 91:
 /*!**********************************************************************************************************************!*\
   !*** /Users/ruanlucheng/learn/web/study-web/case/heima/uni-shop/uni_modules/uni-icons/components/uni-icons/icons.js ***!
   \**********************************************************************************************************************/
@@ -13414,24 +13464,6 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
     "font_class": "cart",
     "unicode": "e631",
     "unicode_decimal": 58929 }] };exports.default = _default;
-
-/***/ }),
-
-/***/ 99:
-/*!***********************************************************************************************************************************!*\
-  !*** /Users/ruanlucheng/learn/web/study-web/case/heima/uni-shop/uni_modules/uni-goods-nav/components/uni-goods-nav/i18n/index.js ***!
-  \***********************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 100));
-var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 101));
-var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 102));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
-{
-  en: _en.default,
-  'zh-Hans': _zhHans.default,
-  'zh-Hant': _zhHant.default };exports.default = _default;
 
 /***/ })
 
