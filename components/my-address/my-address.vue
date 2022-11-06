@@ -8,7 +8,7 @@
     </view>
     
     <!-- 渲染收货信息的盒子 -->
-    <view class="address-info-box" v-else>
+    <view class="address-info-box" v-else @click="chooseAddress">
       <view class="row1">
         <view class="row1-left">
           <view class="username">
@@ -38,7 +38,7 @@
 </template>
 
 <script>
-  import { mapState, mapMutations } from 'vuex'
+  import { mapState, mapMutations, mapGetters } from 'vuex'
   export default {
     name:"my-address",
     data() {
@@ -51,19 +51,38 @@
       async chooseAddress() {
         const [err, succ] = await uni.chooseAddress().catch(err => err)
         if(err === null && succ.errMsg === 'chooseAddress:ok') {
-          console.log(succ);
           // this.address = succ
           // 将用户选择的收货地址 存储到vuex中
           this.updateAddress(succ)
         }
+        
+        if(err && (err.errMsg === 'chooseAddress:fail auth deny' || err.errMsg === 'chooseAddress:fail authorize no response')) {
+          // 通过调用这个方法 让用户重新授权
+         this.reAuth() 
+        }
+      },
+      // 让用户重新授权
+      async reAuth() {
+        const [err2, confirmResult] = await uni.showModal({
+          content:'检测到您没打开地址权限，是否去设置打开？',
+          confirmText:'确认',
+          cancelText:'取消'
+        })
+        
+        if(err2) return
+        if(confirmResult.cancel) return uni.$showMsg('您取消了地址授权！')
+        if(confirmResult.confirm) return uni.openSetting({
+          success: (settingResult) => {
+            if(!settingResult.authSetting['scope.address']) return nui.$showMsg('您取消了授权')
+            if(settingResult.authSetting['scope.address']) return nui.$showMsg('授权成功，请选择收货地址')
+          }
+        })
+        
       }
     },
     computed: {
       ...mapState('m_user', ['address']),
-      addstr() {
-        if(!this.address.provinceName) return ''
-        return this.address.provinceName + this.address.cityName + this.address.countyName + this.address.detailInfo
-      }
+      ...mapGetters('m_user', ['addstr'])
     }
   }
 </script>

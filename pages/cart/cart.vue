@@ -1,5 +1,5 @@
 <template>
-  <view>
+  <view class="cart-container">
     <!-- 收货地址组件 -->
     <my-address></my-address>
     <!-- 商品列表标题区域 -->
@@ -23,6 +23,9 @@
         </uni-swipe-action-item>
       </block>
     </uni-swipe-action>
+    
+    <!-- 使用自定义结算组件 -->
+    <my-settle></my-settle>
   </view>
 </template>
 
@@ -62,6 +65,9 @@
 </script>
 
 <style lang="scss">
+  .cart-container {
+    padding-bottom: 50px;
+  }
 .cart-title {
   height: 40px;
   display: flex;

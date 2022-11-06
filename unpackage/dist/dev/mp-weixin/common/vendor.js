@@ -2538,7 +2538,7 @@ uni$1;exports.default = _default;
 
 /***/ }),
 
-/***/ 104:
+/***/ 105:
 /*!*****************************************************************************************************************************************!*\
   !*** /Users/ruanlucheng/learn/web/study-web/case/heima/uni-shop/uni_modules/uni-swipe-action/components/uni-swipe-action-item/mpwxs.js ***!
   \*****************************************************************************************************************************************/
@@ -2632,7 +2632,7 @@ mpMixins;exports.default = _default;
 
 /***/ }),
 
-/***/ 105:
+/***/ 106:
 /*!********************************************************************************************************************************************!*\
   !*** /Users/ruanlucheng/learn/web/study-web/case/heima/uni-shop/uni_modules/uni-swipe-action/components/uni-swipe-action-item/bindingx.js ***!
   \********************************************************************************************************************************************/
@@ -2945,7 +2945,7 @@ bindIngXMixins;exports.default = _default;
 
 /***/ }),
 
-/***/ 106:
+/***/ 107:
 /*!*******************************************************************************************************************************************!*\
   !*** /Users/ruanlucheng/learn/web/study-web/case/heima/uni-shop/uni_modules/uni-swipe-action/components/uni-swipe-action-item/mpother.js ***!
   \*******************************************************************************************************************************************/
@@ -3355,7 +3355,7 @@ function normalizeComponent (
 Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 4));
 var _vuex = _interopRequireDefault(__webpack_require__(/*! vuex */ 13));
 var _cart = _interopRequireDefault(__webpack_require__(/*! @/store/cart.js */ 14));
-var _user = _interopRequireDefault(__webpack_require__(/*! @/store/user.js */ 169));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _user = _interopRequireDefault(__webpack_require__(/*! @/store/user.js */ 15));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
 _vue.default.use(_vuex.default);
 
@@ -3370,7 +3370,7 @@ store;exports.default = _default;
 
 /***/ }),
 
-/***/ 123:
+/***/ 124:
 /*!***********************************************************************************************************************************!*\
   !*** /Users/ruanlucheng/learn/web/study-web/case/heima/uni-shop/uni_modules/uni-goods-nav/components/uni-goods-nav/i18n/index.js ***!
   \***********************************************************************************************************************************/
@@ -3378,9 +3378,9 @@ store;exports.default = _default;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 124));
-var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 125));
-var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 126));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 125));
+var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 126));
+var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 127));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
 {
   en: _en.default,
   'zh-Hans': _zhHans.default,
@@ -3388,7 +3388,7 @@ var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 1
 
 /***/ }),
 
-/***/ 124:
+/***/ 125:
 /*!**********************************************************************************************************************************!*\
   !*** /Users/ruanlucheng/learn/web/study-web/case/heima/uni-shop/uni_modules/uni-goods-nav/components/uni-goods-nav/i18n/en.json ***!
   \**********************************************************************************************************************************/
@@ -3399,7 +3399,7 @@ module.exports = JSON.parse("{\"uni-goods-nav.options.shop\":\"shop\",\"uni-good
 
 /***/ }),
 
-/***/ 125:
+/***/ 126:
 /*!***************************************************************************************************************************************!*\
   !*** /Users/ruanlucheng/learn/web/study-web/case/heima/uni-shop/uni_modules/uni-goods-nav/components/uni-goods-nav/i18n/zh-Hans.json ***!
   \***************************************************************************************************************************************/
@@ -3410,7 +3410,7 @@ module.exports = JSON.parse("{\"uni-goods-nav.options.shop\":\"店铺\",\"uni-go
 
 /***/ }),
 
-/***/ 126:
+/***/ 127:
 /*!***************************************************************************************************************************************!*\
   !*** /Users/ruanlucheng/learn/web/study-web/case/heima/uni-shop/uni_modules/uni-goods-nav/components/uni-goods-nav/i18n/zh-Hant.json ***!
   \***************************************************************************************************************************************/
@@ -4678,7 +4678,7 @@ module.exports = index_cjs;
 
 /***/ }),
 
-/***/ 134:
+/***/ 135:
 /*!*************************************************************************************************************************************!*\
   !*** /Users/ruanlucheng/learn/web/study-web/case/heima/uni-shop/uni_modules/uni-search-bar/components/uni-search-bar/i18n/index.js ***!
   \*************************************************************************************************************************************/
@@ -4686,9 +4686,9 @@ module.exports = index_cjs;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 135));
-var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 136));
-var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 137));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 136));
+var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 137));
+var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 138));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
 {
   en: _en.default,
   'zh-Hans': _zhHans.default,
@@ -4696,7 +4696,7 @@ var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 1
 
 /***/ }),
 
-/***/ 135:
+/***/ 136:
 /*!************************************************************************************************************************************!*\
   !*** /Users/ruanlucheng/learn/web/study-web/case/heima/uni-shop/uni_modules/uni-search-bar/components/uni-search-bar/i18n/en.json ***!
   \************************************************************************************************************************************/
@@ -4707,7 +4707,7 @@ module.exports = JSON.parse("{\"uni-search-bar.cancel\":\"cancel\",\"uni-search-
 
 /***/ }),
 
-/***/ 136:
+/***/ 137:
 /*!*****************************************************************************************************************************************!*\
   !*** /Users/ruanlucheng/learn/web/study-web/case/heima/uni-shop/uni_modules/uni-search-bar/components/uni-search-bar/i18n/zh-Hans.json ***!
   \*****************************************************************************************************************************************/
@@ -4718,7 +4718,7 @@ module.exports = JSON.parse("{\"uni-search-bar.cancel\":\"cancel\",\"uni-search-
 
 /***/ }),
 
-/***/ 137:
+/***/ 138:
 /*!*****************************************************************************************************************************************!*\
   !*** /Users/ruanlucheng/learn/web/study-web/case/heima/uni-shop/uni_modules/uni-search-bar/components/uni-search-bar/i18n/zh-Hant.json ***!
   \*****************************************************************************************************************************************/
@@ -4791,12 +4791,56 @@ module.exports = JSON.parse("{\"uni-search-bar.cancel\":\"cancel\",\"uni-search-
       var c = 0;
       state.cart.forEach(function (x) {return c += x.goods_count;});
       return c;
+    },
+    checkedCount: function checkedCount(state) {
+      return state.cart.filter(function (x) {return x.goods_state;}).reduce(function (total, item) {return total += item.goods_count;}, 0);
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 
 /***/ 15:
+/*!********************************************************************************!*\
+  !*** /Users/ruanlucheng/learn/web/study-web/case/heima/uni-shop/store/user.js ***!
+  \********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  // 开启命名空间
+  namespaced: true,
+
+  // 数据
+  state: function state() {return {
+      address: JSON.parse(uni.getStorageSync('address') || '{}') };},
+
+
+  // 方法
+  mutations: {
+    // 更新收货地址
+    updateAddress: function updateAddress(state, address) {
+      state.address = address;
+
+      this.commit('m_user/saveAddressToStorage');
+    },
+    // 持久化存储address
+    saveAddressToStorage: function saveAddressToStorage(state) {
+      uni.setStorageSync('address', JSON.stringify(state.address));
+    } },
+
+
+
+  getters: {
+    addstr: function addstr(state) {
+      if (!state.address.provinceName) return '';
+      return state.address.provinceName + state.address.cityName + state.address.countyName + state.address.detailInfo;
+    } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+
+/***/ 16:
 /*!*************************************************************************************************************************************!*\
   !*** /Users/ruanlucheng/learn/web/study-web/case/heima/uni-shop/node_modules/@escook/request-miniprogram/miniprogram_dist/index.js ***!
   \*************************************************************************************************************************************/
@@ -4881,36 +4925,6 @@ var $http = new Request();exports.$http = $http;
 
 /***/ }),
 
-/***/ 169:
-/*!********************************************************************************!*\
-  !*** /Users/ruanlucheng/learn/web/study-web/case/heima/uni-shop/store/user.js ***!
-  \********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
-  // 开启命名空间
-  namespaced: true,
-
-  // 数据
-  state: function state() {return {
-      address: {} };},
-
-
-  // 方法
-  mutations: {
-    // 更新收货地址
-    updateAddress: function updateAddress(state, address) {
-      state.address = address;
-    } },
-
-
-
-  getters: {} };exports.default = _default;
-
-/***/ }),
-
 /***/ 2:
 /*!***********************************!*\
   !*** (webpack)/buildin/global.js ***!
@@ -4942,18 +4956,18 @@ module.exports = g;
 
 /***/ }),
 
-/***/ 22:
+/***/ 23:
 /*!**********************************************************!*\
   !*** ./node_modules/@babel/runtime/regenerator/index.js ***!
   \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! regenerator-runtime */ 23);
+module.exports = __webpack_require__(/*! regenerator-runtime */ 24);
 
 /***/ }),
 
-/***/ 23:
+/***/ 24:
 /*!************************************************************!*\
   !*** ./node_modules/regenerator-runtime/runtime-module.js ***!
   \************************************************************/
@@ -4984,7 +4998,7 @@ var oldRuntime = hadRuntime && g.regeneratorRuntime;
 // Force reevalutation of runtime.js.
 g.regeneratorRuntime = undefined;
 
-module.exports = __webpack_require__(/*! ./runtime */ 24);
+module.exports = __webpack_require__(/*! ./runtime */ 25);
 
 if (hadRuntime) {
   // Restore the original runtime.
@@ -5001,7 +5015,7 @@ if (hadRuntime) {
 
 /***/ }),
 
-/***/ 24:
+/***/ 25:
 /*!*****************************************************!*\
   !*** ./node_modules/regenerator-runtime/runtime.js ***!
   \*****************************************************/
@@ -5733,7 +5747,7 @@ if (hadRuntime) {
 
 /***/ }),
 
-/***/ 25:
+/***/ 26:
 /*!*****************************************************************************************!*\
   !*** /Users/ruanlucheng/learn/web/study-web/case/heima/uni-shop/mixins/tabbar-badge.js ***!
   \*****************************************************************************************/
@@ -12290,7 +12304,7 @@ internalMixin(Vue);
 
 /***/ }),
 
-/***/ 91:
+/***/ 92:
 /*!**********************************************************************************************************************!*\
   !*** /Users/ruanlucheng/learn/web/study-web/case/heima/uni-shop/uni_modules/uni-icons/components/uni-icons/icons.js ***!
   \**********************************************************************************************************************/
