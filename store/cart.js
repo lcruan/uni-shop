@@ -48,11 +48,14 @@ export default {
     }
   },
   getters: {
+    // 购物车中所有商品的总数量
     total(state) {
-      let c = 0
-      state.cart.forEach(x => c += x.goods_count)
-      return c
+      // let c = 0
+      // state.cart.forEach(x => c += x.goods_count)
+      // return c
+      return state.cart.reduce((total, item) => total += item.goods_count, 0)
     },
+    // 购物车中已勾选商品的总数量
     checkedCount(state) {
       return state.cart.filter(x => x.goods_state).reduce((total, item) => total += item.goods_count, 0)
     }

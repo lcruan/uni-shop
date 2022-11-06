@@ -141,8 +141,11 @@ var _vuex = __webpack_require__(/*! vuex */ 13);function ownKeys(object, enumera
 
 
   },
-  computed: _objectSpread({},
-  (0, _vuex.mapGetters)('m_cart', ['checkedCount'])) };exports.default = _default;
+  computed: _objectSpread(_objectSpread({},
+  (0, _vuex.mapGetters)('m_cart', ['checkedCount', 'total'])), {}, {
+    isFullCheck: function isFullCheck() {
+      return this.total === this.checkedCount;
+    } }) };exports.default = _default;
 
 /***/ }),
 

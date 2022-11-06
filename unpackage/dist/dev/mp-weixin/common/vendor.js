@@ -4787,11 +4787,14 @@ module.exports = JSON.parse("{\"uni-search-bar.cancel\":\"cancel\",\"uni-search-
     } },
 
   getters: {
+    // 购物车中所有商品的总数量
     total: function total(state) {
-      var c = 0;
-      state.cart.forEach(function (x) {return c += x.goods_count;});
-      return c;
+      // let c = 0
+      // state.cart.forEach(x => c += x.goods_count)
+      // return c
+      return state.cart.reduce(function (total, item) {return total += item.goods_count;}, 0);
     },
+    // 购物车中已勾选商品的总数量
     checkedCount: function checkedCount(state) {
       return state.cart.filter(function (x) {return x.goods_state;}).reduce(function (total, item) {return total += item.goods_count;}, 0);
     } } };exports.default = _default;
