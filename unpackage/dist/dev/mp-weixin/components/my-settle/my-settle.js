@@ -114,7 +114,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
 
 
 
@@ -141,8 +141,10 @@ var _vuex = __webpack_require__(/*! vuex */ 13);function ownKeys(object, enumera
 
 
   },
-  computed: _objectSpread(_objectSpread({},
-  (0, _vuex.mapGetters)('m_cart', ['checkedCount', 'total', 'checkedGoodsAmount'])), {}, {
+  computed: _objectSpread(_objectSpread(_objectSpread(_objectSpread({},
+  (0, _vuex.mapGetters)('m_cart', ['checkedCount', 'total', 'checkedGoodsAmount'])),
+  (0, _vuex.mapGetters)('m_user', ['addstr'])),
+  (0, _vuex.mapState)('m_user', ['token'])), {}, {
     isFullCheck: function isFullCheck() {
       return this.total === this.checkedCount;
     } }),
@@ -151,7 +153,14 @@ var _vuex = __webpack_require__(/*! vuex */ 13);function ownKeys(object, enumera
   (0, _vuex.mapMutations)('m_cart', ['updateAllGoodsState'])), {}, {
     changeAllState: function changeAllState() {
       this.updateAllGoodsState(!this.isFullCheck);
+    },
+    // 用户点击了结算按钮
+    settlement: function settlement() {
+      if (!this.checkedCount) return uni.$showMsg('请选择要结算的商品');
+      if (!this.addstr) return uni.$showMsg('请选择收货地址');
+      if (!this.token) return uni.$showMsg('请先登录');
     } }) };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 

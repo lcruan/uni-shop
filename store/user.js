@@ -4,7 +4,8 @@ export default {
   
   // 数据
   state: () => ({
-    address: JSON.parse(uni.getStorageSync('address') || '{}')
+    address: JSON.parse(uni.getStorageSync('address') || '{}'),
+    token: ''
   }),
   
   // 方法

@@ -4826,7 +4826,8 @@ module.exports = JSON.parse("{\"uni-search-bar.cancel\":\"cancel\",\"uni-search-
 
   // 数据
   state: function state() {return {
-      address: JSON.parse(uni.getStorageSync('address') || '{}') };},
+      address: JSON.parse(uni.getStorageSync('address') || '{}'),
+      token: '' };},
 
 
   // 方法
