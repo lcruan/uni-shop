@@ -57,11 +57,7 @@
             "minified" : false
         },
         "usingComponents" : true,
-        "requiredPrivateInfos": [
-            "chooseLocation",
-            "getLocation", 
-            "chooseAddress"
-        ]
+        "requiredPrivateInfos" : [ "chooseLocation", "getLocation", "chooseAddress" ]
     },
     "vueVersion" : "2"
 }
